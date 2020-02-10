@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="andreychertckov", # Replace with your own username
+    name="opencv-log", # Replace with your own username
     version="1.1.0",
     author="Andrey Chertkov",
     author_email="andreychertckov@gmail.com",
