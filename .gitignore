@@ -7,3 +7,4 @@ poetry.lock
 .env
 log/
 html_template.html
+.idea
