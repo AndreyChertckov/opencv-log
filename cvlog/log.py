@@ -26,10 +26,13 @@ def image(level, img=None, description=None):
 
 
 def log_image(level, img, description):
-    retval, buffer = cv2.imencode('.png', img)
-    if not retval:
-        return None
-    html_logger.log_image(level, base64.b64encode(buffer).decode(), description)
+    buffer = None
+    if img is not None:
+        retval, buffer = cv2.imencode('.png', img)
+        if not retval:
+            return None
+        buffer = base64.b64encode(buffer).decode()
+    html_logger.log_image(level, buffer, description)
 
 
 def show_image(title, img):
