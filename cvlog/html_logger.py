@@ -16,8 +16,14 @@ class HtmlLogger:
         self.__create_file()
         self.__no_data = True
 
-    def log_image(self, level, img_data=None, description=""):
-        data = f'<img src="data:image/png;base64, {img_data}"/>' + f'<p>{description}</p>'
+    def log_image(self, level, img_data=None, description=None):
+        data = ""
+        if img_data is not None:
+            data += f'<img src="data:image/png;base64, {img_data}"/>'
+
+        if description is not None:
+            data += f"<p>{description}</p>"
+
         self.__append_log_item(level, data)
 
     def __append_log_item(self, level, log_detail):
