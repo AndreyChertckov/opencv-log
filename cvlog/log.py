@@ -10,17 +10,17 @@ import time
 html_logger = None
 
 
-def image(level, image=None, description=None):
-    if image is None and description is None:
+def image(level, img=None, description=None):
+    if img is None and description is None:
         return
     try:
         __init()
         if Config().curent_level().value < level.value:
             return
         if Config().curent_mode() == Mode.DEBUG:
-            show_image(level.name, image)
+            show_image(level.name, img)
         elif Config().curent_mode() == Mode.LOG:
-            log_image(level.name, image, description)
+            log_image(level.name, img, description)
     except Exception as e:
         print(e)
 
