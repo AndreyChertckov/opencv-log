@@ -13,6 +13,8 @@ html_logger = None
 def image(level, img=None, description=None):
     if img is None and description is None:
         return
+    if img is not None:
+        img = img[..., ::-1]
     try:
         __init()
         if Config().curent_level().value < level.value:
