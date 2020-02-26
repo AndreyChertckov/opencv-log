@@ -8,3 +8,4 @@ poetry.lock
 log/
 html_template.html
 .idea
+venv
